@@ -26,6 +26,9 @@ void	isprime(int nb) {
 		printf("il numero %i NON è un numero primo\n", nb);
 }
 
+int fattori(nb)
+
+
 // void    mcm() {
 
 // }
