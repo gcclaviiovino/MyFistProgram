@@ -42,9 +42,9 @@ while(nb % div == 0 && nb2 % div2 == 0){
 	div2 ++;
 
 	while (div < nb && div2 < nb2 && nb3 > 1){
-		array[i] == div;
+		array[i] = div;
 		nb / array[i] == nb3;
-		array[i2] == div2;
+		array[i2] = div2;
 		nb2 / array2[i2] == nb4;
 	}
 }
