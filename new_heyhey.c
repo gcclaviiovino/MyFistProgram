@@ -26,9 +26,31 @@ void	isprime(int nb) {
 		printf("il numero %i NON è un numero primo\n", nb);
 }
 
-int fattori(nb)
+int fattori(int nb, int nb2){
+int div = 1;
+int div2 = 1;
+int n;
+int n2;
+int array[n];
+int array2[n2];
+int i = 0;
+int i2 = 0;
+int nb3 = 0;
+int nb4 = 0;
+while(nb % div == 0 && nb2 % div2 == 0){
+	div ++;
+	div2 ++;
 
-
+	while (div < nb && div2 < nb2 && nb3 > 1){
+		array[i] == div;
+		nb / array[i] == nb3;
+		array[i2] == div2;
+		nb2 / array2[i2] == nb4;
+	}
+}
+printf ("%i", nb3);
+printf ("%i", nb4);
+}
 // void    mcm() {
 
 // }
@@ -65,15 +87,18 @@ int	ft_atoi(char *str) {
 
 int main(int ac, char **av) {
 	int	num;
+	int num2;
 
-	num = 0;
 	if (ac == 2) {
         printf("Abbiamo due argomenti\n");
 		num = ft_atoi(av[1]);
 		// printf("ft_atoi: %d", num);
     }
     else if (ac > 2) {
+		num = ft_atoi(av[1]);
+		num2 = ft_atoi(av[2]);
         printf("Abbiamo più di due argomenti\n");
+		fattori(num, num2);
     }
     else
 		printf("Abbiamo un solo argomento\n");
