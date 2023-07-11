@@ -42,9 +42,9 @@ int fattori(int nb, int nb2){
 			div2 ++;
 				while (div < nb && div2 < nb2 && nb3 > 1){
 					array[i] = div;
-					nb / array[i] == nb3;
+					nb3 = nb / array[i];
 					array[i2] = div2;
-					nb2 / array2[i2] == nb4;
+					nb4 = nb2 / array2[i2];
 					i++;
 					i2++;
 					
