@@ -29,8 +29,8 @@ void	isprime(int nb) {
 int fattori(int nb, int nb2){
 	int div = 1;
 	int div2 = 1;
-	int n;
-	int n2;
+	int n = count;
+	int n2 = count;
 	int array[n];
 	int array2[n2];
 	int i = 0;
@@ -53,6 +53,7 @@ int fattori(int nb, int nb2){
 		}
 	printf ("%i", nb3);
 	printf ("%i", nb4);
+	return 0;
 }
 // void    mcm() {
 
