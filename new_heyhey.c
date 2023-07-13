@@ -26,20 +26,26 @@ void	isprime(int nb) {
 		printf("il numero %i NON è un numero primo\n", nb);
 }
 
+int count(int nb, int nb2){
+	int count = 1;
+	while(divisori(nb, 0) && divisori(nb2, 0)){
+			count++;
+	}
+return 0;
+}
+
 int fattori(int nb, int nb2){
 	int div = 1;
 	int div2 = 1;
-	int n = count;
-	int n2 = count;
-	int array[n];
-	int array2[n2];
+	int array[count(nb, nb2)];
+	int array2[count(nb, nb2)];
 	int i = 0;
 	int i2 = 0;
 	int nb3 = 0;
 	int nb4 = 0;
 		while(nb % div == 0 && nb2 % div2 == 0){
-			div ++;
-			div2 ++;
+		div ++;
+		div2 ++;
 				while (div < nb && div2 < nb2 && nb3 > 1){
 					array[i] = div;
 					nb3 = nb / array[i];
