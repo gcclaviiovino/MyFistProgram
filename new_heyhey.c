@@ -31,7 +31,7 @@ int count(int nb){
 	while(divisori(nb, 0)){
 			count++;
 	}
-return 0;
+return count;
 }
 
 int fattori(int nb, int nb2){
@@ -41,33 +41,29 @@ int fattori(int nb, int nb2){
 	int array2[count(nb2)];
 	int i = 0;
 	int i2 = 0;
-	int fattdi1 = 2;
-	int fattdi2 = 2;
+	int fattdi1 = 0;
+	int fattdi2 = 0;
 	int esito1;
 	int esito2;
-		while(nb % div == 0 && nb2 % div2 == 0){
-		div ++;
-		div2 ++;
-				while (div < nb && div2 < nb2 && fattdi1 > 1 && fattdi2 > 1){
+		if(nb % div == 0 && nb2 % div2 == 0){
+			printf("ciao\n");
+				while(div < nb && div2 < nb2 && fattdi1 > 1 && fattdi2 > 1){
 					array[i] = div;
 					fattdi1 = nb / array[i];
 					array[i2] = div2;
 					fattdi2 = nb2 / array2[i2];
+					esito1 = fattdi1 / array[i];
+					esito2 = fattdi2 / array2[i2];
+					printf ("%i", esito1);
+					printf ("%i", esito2);
 					i++;
-					i2++;
-					while(fattdi1 && fattdi2){
-						esito1 = fattdi1 / array[i];
-						esito2 = fattdi2 / array2[i2];
-						fattdi1 ++;
-						fattdi2 ++;
-						printf ("%i", esito1);
-						printf ("%i", esito2);
-					}	
+					i2++;	
+					fattdi1 ++;
+					fattdi2 ++;
 				}
-		
+		div ++;
+		div2 ++;
 		}
-	
-	return 0;
 }
 // void    mcm() {
 
