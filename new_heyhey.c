@@ -28,42 +28,49 @@ void	isprime(int nb) {
 
 int count(int nb){
 	int count = 1;
-	while(divisori(nb, 0)){
+	int div = 1;
+	while(div < nb / 2 + 1){
+		if (nb % div == 0)
 			count++;
+		div ++;
 	}
+
 return count;
 }
 
 int fattori(int nb, int nb2){
-	int div = 1;
-	int div2 = 1;
+	int div = 2;
+	int div2 = 2;
 	int array[count(nb)];
 	int array2[count(nb2)];
 	int i = 0;
 	int i2 = 0;
-	int fattdi1 = 0;
-	int fattdi2 = 0;
-	int esito1;
-	int esito2;
-		if(nb % div == 0 && nb2 % div2 == 0){
-			printf("ciao\n");
-				while(div < nb && div2 < nb2 && fattdi1 > 1 && fattdi2 > 1){
-					array[i] = div;
-					fattdi1 = nb / array[i];
-					array[i2] = div2;
-					fattdi2 = nb2 / array2[i2];
-					esito1 = fattdi1 / array[i];
-					esito2 = fattdi2 / array2[i2];
-					printf ("%i", esito1);
-					printf ("%i", esito2);
-					i++;
-					i2++;	
-					fattdi1 ++;
-					fattdi2 ++;
-				}
-		div ++;
-		div2 ++;
-		}
+				while(div <= nb && div2 <= nb2){
+					if(nb % div == 0){
+						array[i] = div;
+						i ++;
+						nb = nb / div;
+					}
+					else
+						div ++;
+					
+					if(nb2 % div2 == 0){
+						array[i2] = div2;
+						i2 ++;
+						nb2 = nb2 / div2;
+					}
+					else
+						div2 ++;
+					}			
+	printf ("Fattori del primo numero:\n");
+	for(int f = 0; f < i; f++)
+		printf("%i\n", array[f]);
+	printf ("Fattori del secondo numero:\n");
+	for(int f2 = 0; f2 < i2; f2 ++)
+		printf("%i\n", array[f2]);
+	printf("\n");
+	
+		
 }
 // void    mcm() {
 
@@ -106,16 +113,19 @@ int main(int ac, char **av) {
 	if (ac == 2) {
         printf("Abbiamo due argomenti\n");
 		num = ft_atoi(av[1]);
+		divisori(num, 1);
+		isprime(num);
 		// printf("ft_atoi: %d", num);
     }
     else if (ac > 2) {
+        printf("Abbiamo più di due argomenti\n");
 		num = ft_atoi(av[1]);
 		num2 = ft_atoi(av[2]);
-        printf("Abbiamo più di due argomenti\n");
 		fattori(num, num2);
     }
-    else
+    else{
+	
 		printf("Abbiamo un solo argomento\n");
-	divisori(num, 1);
-	isprime(num);
+	}
+	
 }
