@@ -27,9 +27,9 @@ void	isprime(int nb) {
 }
 
 int count(int nb){
-	int count = 1;
+	int count = 0;
 	int div = 1;
-	while(div < nb / 2 + 1){
+	while(div <= nb){
 		if (nb % div == 0)
 			count++;
 		div ++;
@@ -41,6 +41,8 @@ return count;
 int fattori(int nb, int nb2){
 	int div = 2;
 	int div2 = 2;
+	int esito = nb;
+	int esito2 = nb2;
 	int array[count(nb)];
 	int array2[count(nb2)];
 	int i = 0;
@@ -51,9 +53,9 @@ int fattori(int nb, int nb2){
 						i ++;
 						nb = nb / div;
 					}
-					else
+					else{
 						div ++;
-					
+					}
 					if(nb2 % div2 == 0){
 						array[i2] = div2;
 						i2 ++;
@@ -67,10 +69,7 @@ int fattori(int nb, int nb2){
 		printf("%i\n", array[f]);
 	printf ("Fattori del secondo numero:\n");
 	for(int f2 = 0; f2 < i2; f2 ++)
-		printf("%i\n", array[f2]);
-	printf("\n");
-	
-		
+		printf("%i\n", array[f2]);	
 }
 // void    mcm() {
 
